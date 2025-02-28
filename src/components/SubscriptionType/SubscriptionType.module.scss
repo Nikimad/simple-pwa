@@ -1,0 +1,57 @@
+@use "@/styles/variables.scss" as *;
+
+$indicator-size: 0.75rem;
+$switch-padding: 0.25rem;
+
+.subscriptiontype {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    background-color: $magnolia;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 1rem;
+    margin: 0;
+
+    &__button {
+        background-color: transparent;
+        border: none;
+        color: $cool-gray;
+        font-weight: 500;
+        text-transform: capitalize;
+        transition: 0.3s;
+
+        &_current {
+            color: inherit;
+        }
+    }
+
+    &__switch {
+        display: flex;
+        align-items: center;
+        position: relative;
+        background-color: $marine-blue;
+        height: calc($indicator-size + ($switch-padding * 2));
+        width: calc(3 * $indicator-size);
+        border-radius: 10px;
+
+        &__indicator {
+            position: absolute;
+            height: $indicator-size;
+            width: $indicator-size;
+            border-radius: 50%;
+            background-color: $white;
+            left: $switch-padding;
+            transition: 0.3s;
+        }
+
+        &__input:checked + &__indicator {
+            left: calc(100% - ($indicator-size + $switch-padding));
+        }
+
+        &:has(&__input:focus-visible) {
+            outline: auto;
+            outline-offset: 3px;
+        }
+    }
+}
