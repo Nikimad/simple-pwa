@@ -1,0 +1,24 @@
+@use "./variables.scss" as *;
+
+.choice {
+    transition: 0.3s;
+    
+    &:has(input:checked) {
+        background-color: $magnolia;
+        border-color: $purplish-blue;
+    }
+
+    &:has(input:focus-visible) {
+        outline: auto;
+    }
+}
+
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}

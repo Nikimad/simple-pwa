@@ -1,0 +1,17 @@
+@use "./variables.scss" as *;
+@use "./utilities.scss" as *;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    color: $marine-blue;
+    font-size: $fs-paragraph;
+    background-color: $alabaster;
+    width: min($desktop, 100% - 0.5rem);
+    margin: 0 auto;
+    padding: 0.5rem;
+}
