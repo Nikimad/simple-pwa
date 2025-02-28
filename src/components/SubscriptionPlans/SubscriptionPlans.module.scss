@@ -1,0 +1,16 @@
+.subscriptionplans {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+
+    &__container {
+        display: grid;
+        gap: 2rem;
+    }
+
+    & > * {
+        flex: 1 0 125px;
+    }
+}
