@@ -1,0 +1,49 @@
+@use "@/styles/variables.scss" as *;
+
+.summary {
+    
+    &__check {
+        background-color: $magnolia;
+        border-radius: 0.5rem;
+    }
+
+    &__check,
+    &__total {
+        padding: 2rem;
+    }
+
+    &__separator {
+        border: none;
+        border-bottom: 0.5px solid $light-gray;
+        margin-block: 1.5rem;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__text {
+            margin: 0;
+
+            &_bold {
+                font-weight: 700;
+            }
+
+            &_light {
+                color: $cool-gray;
+            }
+
+            &_accent {
+                color: $purplish-blue;
+            }
+        }
+    }
+
+    &__addons {
+        display: grid;
+        gap: 1rem;
+        padding: 0;
+        margin: 0;
+    }
+}
