@@ -1,0 +1,12 @@
+@use "@/styles/variables.scss" as *;
+
+.header {
+    &__title {
+        margin: 0.75rem 0;
+    }
+
+    &__description {
+        color: $cool-gray;
+        margin: 0.75rem 0;
+    }
+}
