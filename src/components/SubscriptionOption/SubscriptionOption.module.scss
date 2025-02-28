@@ -1,0 +1,41 @@
+@use "@/styles/variables.scss" as *;
+
+.subscriptionoption {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem 1rem;
+    border: 1px solid $light-gray;
+    border-radius: 0.5rem;
+    padding: 1rem;
+
+    &::marker {
+        content: "";
+    }
+
+    &__description {
+        display: grid;
+        gap: 0.25rem;
+        min-width: 10ch;
+
+        &__title {
+            font-weight: bold;
+        }
+
+        &__price {
+            color: $cool-gray;
+        }
+
+        &__optional {
+            font-size: 0.75em;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
