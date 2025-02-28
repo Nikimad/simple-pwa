@@ -1,0 +1,57 @@
+@use "@/styles/variables.scss" as *;
+
+.subscriptionaddon {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem 1rem;
+    border: 1px solid $light-gray;
+    border-radius: 0.5rem;
+
+    &::marker {
+        content: "";
+    }
+
+    &__content {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        width: 100%;
+        padding: 1rem;
+
+        &__text {
+            display: grid;
+            gap: 0.25rem;
+            width: 100%;
+        }
+
+        &__title {
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        &__description {
+            color: $cool-gray;
+        }
+
+        &__price {
+            color: $purplish-blue;
+            margin-left: auto;
+        }
+    }
+
+    &__checkbox {
+        display: flex;
+        height: 1.5rem;
+        aspect-ratio: 1;
+        border-radius: 0.25rem;
+        border: 1px solid $light-gray;
+    }
+
+    &__input:checked + &__checkbox {
+        background-color: $purplish-blue;
+        background-image: url("/icon-checkmark.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
