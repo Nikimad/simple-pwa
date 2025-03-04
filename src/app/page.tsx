@@ -1,17 +1,17 @@
 import Form from "@/components/Form";
 import FormBody from "@/components/FormBody";
-import FormHeader from "@/components/FormHeader";
 import SubscriptionAddons from "@/components/SubscriptionAddons";
 import SubscriptionPlans from "@/components/SubscriptionPlans";
 import SubscriptionSummary from "@/components/SubscriptionSummary";
+import PersonalInfo from "@/components/PersonalInfo";
+import Banner from "@/components/Banner";
 
 const Page = () => (
   <>
     <Form>
-      <FormHeader
-        title="Personal info"
-        description="Please provide your name, email address and phone number."
-      />
+      <FormBody>
+        <PersonalInfo />
+      </FormBody>
       <FormBody>
         <SubscriptionPlans />
       </FormBody>
@@ -20,6 +20,9 @@ const Page = () => (
       </FormBody>
       <FormBody>
         <SubscriptionSummary />
+      </FormBody>
+      <FormBody>
+        <Banner />
       </FormBody>
     </Form>
   </>
