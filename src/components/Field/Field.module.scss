@@ -1,0 +1,31 @@
+@use "@/styles/variables.scss" as *;
+
+.field {
+    display: grid;
+    gap: 0.5rem;
+
+    &__input {
+        border: 1px solid $light-gray;
+        border-radius: 0.5rem;
+        transition: 0.3s;
+        padding: 1rem;
+
+        &_err {
+            border-color: $strawberry-red;
+        }
+
+        &:hover {
+            border-color: $purplish-blue;
+        }
+    }
+
+    &__label {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__error {
+        font-weight: bold;
+        color: $strawberry-red;
+    }
+}
