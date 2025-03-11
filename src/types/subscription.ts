@@ -1,43 +1,66 @@
-export enum SubscriptionOptionsEnum {
-  Arcade = "arcade",
-  Advanced = "advanced",
-  Pro = "pro",
-}
+import {
+  subscriptionOptionsList,
+  subscriptionTypesList,
+  subscriptionAddonsList,
+} from "@/constants/subscription";
 
-export enum SubscriptionTypesEnum {
-  Month = "mo",
-  Year = "yr",
-}
+// Options
 
-export enum SubscriptionAddonsEnum {
-  OnlineService = "online service",
-  LargerStorage = "larger storage",
-  CustomizableProfile = "customizable profile",
-}
+export type SubscriptionOptionsValues =
+  (typeof subscriptionOptionsList)[number];
 
 export type SubscriptionOption = {
   title: string;
+  value: SubscriptionOptionsValues;
   imgSrc: string;
 };
+
+export type SubscriptionOptions = Record<
+  SubscriptionOptionsValues,
+  SubscriptionOption
+>;
+
+export type SubscriptionOptionsPrices = Record<
+  `${SubscriptionOptionsValues} per ${SubscriptionTypesValues}`,
+  number
+>;
+
+// Types
+
+export type SubscriptionTypesValues = (typeof subscriptionTypesList)[number];
 
 export type SubscriptionType = {
   title: string;
   adjective: string;
+  value: SubscriptionTypesValues;
 };
+
+export type SubscriptionTypes = Record<
+  SubscriptionTypesValues,
+  SubscriptionType
+>;
+
+export type SubscriptionOptionsOptionals = Record<
+  SubscriptionTypesValues,
+  string
+>;
+
+/// Addons
+
+export type SubscriptionAddonsValues = (typeof subscriptionAddonsList)[number];
 
 export type SubscriptionAddon = {
   title: string;
+  value: SubscriptionAddonsValues;
   description: string;
 };
 
-export type SubscriptionOptions = {
-  [Key in SubscriptionOptionsEnum]: SubscriptionOption;
-};
+export type SubscriptionAddons = Record<
+  SubscriptionAddonsValues,
+  SubscriptionAddon
+>;
 
-export type SubscriptionTypes = {
-  [Key in SubscriptionTypesEnum]: SubscriptionType;
-};
-
-export type SubscriptionAddons = {
-  [Key in SubscriptionAddonsEnum]: SubscriptionAddon;
-};
+export type SubscriptionAddonsPrices = Record<
+  `${SubscriptionAddonsValues} per ${SubscriptionTypesValues}`,
+  number
+>;
