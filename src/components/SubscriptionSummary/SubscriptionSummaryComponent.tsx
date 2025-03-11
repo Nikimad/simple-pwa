@@ -1,7 +1,7 @@
 import {
-  SubscriptionAddonsEnum,
-  SubscriptionOptionsEnum,
-  SubscriptionTypesEnum,
+  SubscriptionAddon,
+  SubscriptionOption,
+  SubscriptionType,
 } from "@/types/subscription";
 import {
   subscriptionAddons,
@@ -16,9 +16,9 @@ import SubscriptionPrice from "../SubscriptionPrice";
 import s from "./SubscriptionSummary.module.scss";
 
 type SubscriptionSummaryComponentProps = Readonly<{
-  subscriptionOption: SubscriptionOptionsEnum;
-  subscriptionType: SubscriptionTypesEnum;
-  subscriptionAddonsArray: SubscriptionAddonsEnum[];
+  subscriptionOption: SubscriptionOption["value"];
+  subscriptionType: SubscriptionType["value"];
+  subscriptionAddonsArray: SubscriptionAddon["value"][];
 }>;
 
 const SubscriptionSummaryComponent = ({
