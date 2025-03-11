@@ -1,14 +1,14 @@
 "use client";
 
 import { useCallback, useContext } from "react";
-import { SubscriptionAddonsEnum } from "@/types/subscription";
+import { SubscriptionAddon } from "@/types/subscription";
 import { FormActions } from "@/helpers/formReducer";
 import { formContext } from "../FormProvider/FormProvider";
 import { subscriptionAddons } from "@/constants/subscription";
 import SubscriptionAddonComponent from "./SubscriptionAddonComponent";
 
 type SubscriptionAddonContainerProps = Readonly<{
-  addon: SubscriptionAddonsEnum;
+  addon: SubscriptionAddon["value"];
 }>;
 
 const SubscriptionAddonContainer = ({

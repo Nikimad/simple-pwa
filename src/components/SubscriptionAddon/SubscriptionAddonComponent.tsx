@@ -1,12 +1,9 @@
-import {
-  SubscriptionAddon,
-  SubscriptionAddonsEnum,
-} from "@/types/subscription";
+import { SubscriptionAddon } from "@/types/subscription";
 import s from "./SubscriptionAddon.module.scss";
 import SubscriptionAddonPrice from "../SubscriptionAddonPrice";
 
 interface SubscriptionAddonComponentProps extends SubscriptionAddon {
-  value: SubscriptionAddonsEnum;
+  value: SubscriptionAddon["value"];
   isActive: boolean;
   onChoose: () => void;
 }
@@ -35,7 +32,10 @@ const SubscriptionAddonComponent = ({
           {description}
         </span>
       </span>
-      <SubscriptionAddonPrice subscriptionAddon={value} className={s.subscriptionaddon__content__price} />
+      <SubscriptionAddonPrice
+        subscriptionAddon={value}
+        className={s.subscriptionaddon__content__price}
+      />
     </label>
   </li>
 );
