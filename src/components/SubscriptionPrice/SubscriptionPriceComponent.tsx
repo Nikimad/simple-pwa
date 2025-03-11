@@ -1,7 +1,7 @@
-import { SubscriptionTypesEnum } from "@/types/subscription";
+import { SubscriptionType } from "@/types/subscription";
 
 type SubscriptionPriceComponentProps = Readonly<{
-  subscriptionType: SubscriptionTypesEnum;
+  subscriptionType: SubscriptionType["value"];
   price: number;
   className?: string;
 }>;
