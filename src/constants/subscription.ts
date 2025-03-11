@@ -1,66 +1,82 @@
 import {
-  SubscriptionOptionsEnum,
-  SubscriptionTypesEnum,
-  SubscriptionAddonsEnum,
   SubscriptionOptions,
   SubscriptionTypes,
   SubscriptionAddons,
+  SubscriptionOptionsOptionals,
+  SubscriptionOptionsPrices,
+  SubscriptionAddonsPrices,
 } from "@/types/subscription";
 
+export const subscriptionOptionsList = ["arcade", "advanced", "pro"] as const;
+
+export const subscriptionTypesList = ["mo", "yr"] as const;
+
+export const subscriptionAddonsList = [
+  "online service",
+  "larger storage",
+  "customizable profile",
+] as const;
+
 export const subscriptionOptions: SubscriptionOptions = {
-  [SubscriptionOptionsEnum.Arcade]: {
+  arcade: {
     title: "Arcade",
+    value: "arcade",
     imgSrc: "/icon-arcade.svg",
   },
-  [SubscriptionOptionsEnum.Advanced]: {
+  advanced: {
     title: "Advanced",
+    value: "advanced",
     imgSrc: "/icon-advanced.svg",
   },
-  [SubscriptionOptionsEnum.Pro]: {
+  pro: {
     title: "Pro",
+    value: "pro",
     imgSrc: "/icon-pro.svg",
   },
 };
 
 export const subscriptionTypes: SubscriptionTypes = {
-  [SubscriptionTypesEnum.Month]: { title: "Month", adjective: "Monthly" },
-  [SubscriptionTypesEnum.Year]: { title: "Year", adjective: "Yearly" },
+  mo: { title: "Month", adjective: "Monthly", value: "mo" },
+  yr: { title: "Year", adjective: "Yearly", value: "yr" },
 };
 
 export const subscriptionAddons: SubscriptionAddons = {
-  [SubscriptionAddonsEnum.OnlineService]: {
+  "online service": {
     title: "Online service",
     description: "Acces to multiplayer games",
+    value: "online service",
   },
-  [SubscriptionAddonsEnum.LargerStorage]: {
+  "larger storage": {
     title: "Larger storage",
     description: "Extra 1TB cloud save",
+    value: "larger storage",
   },
-  [SubscriptionAddonsEnum.CustomizableProfile]: {
+  "customizable profile": {
     title: "Customizable profile",
     description: "Custom theme on your profile",
+    value: "customizable profile",
   },
 };
 
-export const subscriptionOptionsPrices = {
-  [`${SubscriptionOptionsEnum.Arcade}_${SubscriptionTypesEnum.Month}`]: 9,
-  [`${SubscriptionOptionsEnum.Advanced}_${SubscriptionTypesEnum.Month}`]: 12,
-  [`${SubscriptionOptionsEnum.Pro}_${SubscriptionTypesEnum.Month}`]: 15,
-  [`${SubscriptionOptionsEnum.Arcade}_${SubscriptionTypesEnum.Year}`]: 90,
-  [`${SubscriptionOptionsEnum.Advanced}_${SubscriptionTypesEnum.Year}`]: 120,
-  [`${SubscriptionOptionsEnum.Pro}_${SubscriptionTypesEnum.Year}`]: 150,
+export const subscriptionOptionsPrices: SubscriptionOptionsPrices = {
+  "arcade per mo": 9,
+  "advanced per mo": 12,
+  "pro per mo": 15,
+  "arcade per yr": 90,
+  "advanced per yr": 120,
+  "pro per yr": 150,
 };
 
-export const subscriptionAddonsPrices = {
-  [`${SubscriptionAddonsEnum.OnlineService}_${SubscriptionTypesEnum.Month}`]: 1,
-  [`${SubscriptionAddonsEnum.LargerStorage}_${SubscriptionTypesEnum.Month}`]: 2,
-  [`${SubscriptionAddonsEnum.CustomizableProfile}_${SubscriptionTypesEnum.Month}`]: 2,
-  [`${SubscriptionAddonsEnum.OnlineService}_${SubscriptionTypesEnum.Year}`]: 10,
-  [`${SubscriptionAddonsEnum.LargerStorage}_${SubscriptionTypesEnum.Year}`]: 20,
-  [`${SubscriptionAddonsEnum.CustomizableProfile}_${SubscriptionTypesEnum.Year}`]: 20,
+export const subscriptionAddonsPrices: SubscriptionAddonsPrices = {
+  "online service per mo": 1,
+  "larger storage per mo": 2,
+  "customizable profile per mo": 2,
+  "online service per yr": 10,
+  "larger storage per yr": 20,
+  "customizable profile per yr": 20,
 };
 
-export const subscriptionOptionsOptionals = {
-  [SubscriptionTypesEnum.Month]: "",
-  [SubscriptionTypesEnum.Year]: "2 month free",
+export const subscriptionOptionsOptionals: SubscriptionOptionsOptionals = {
+  mo: "",
+  yr: "2 month free",
 };
