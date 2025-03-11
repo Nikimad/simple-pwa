@@ -1,17 +1,17 @@
 import {
-  SubscriptionOptionsEnum,
-  SubscriptionTypesEnum,
-  SubscriptionAddonsEnum,
+  SubscriptionAddon,
+  SubscriptionOption,
+  SubscriptionType,
 } from "@/types/subscription";
 
 export type FormState = {
-  subscriptionOption: SubscriptionOptionsEnum;
-  subscriptionType: SubscriptionTypesEnum;
-  subscriptionAddons: SubscriptionAddonsEnum[];
+  subscriptionOption: SubscriptionOption["value"];
+  subscriptionType: SubscriptionType["value"];
+  subscriptionAddons: SubscriptionAddon["value"][];
 };
 
 export const formState: FormState = {
-  subscriptionOption: SubscriptionOptionsEnum.Arcade,
-  subscriptionType: SubscriptionTypesEnum.Month,
+  subscriptionOption: "arcade",
+  subscriptionType: "mo",
   subscriptionAddons: [],
 };
