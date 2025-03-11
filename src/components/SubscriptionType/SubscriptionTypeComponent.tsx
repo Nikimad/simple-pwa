@@ -1,4 +1,3 @@
-import { SubscriptionTypesEnum } from "@/types/subscription";
 import { subscriptionTypes } from "@/constants/subscription";
 import s from "./SubscriptionType.module.scss";
 
@@ -15,15 +14,15 @@ const SubscriptionTypeComponent = ({
     <legend className="visually-hidden">Subscription plan type</legend>
     <label
       className={`${s.subscriptiontype__button} ${
-        value === SubscriptionTypesEnum.Month
+        value === subscriptionTypes.mo.value
           ? s.subscriptiontype__button_current
           : ""
       }`}
     >
-      {subscriptionTypes[SubscriptionTypesEnum.Month].adjective}
+      {subscriptionTypes.mo.adjective}
       <input
         type="button"
-        value={SubscriptionTypesEnum.Month}
+        value={subscriptionTypes.mo.value}
         onClick={onChange}
         className="visually-hidden"
       />
@@ -32,7 +31,7 @@ const SubscriptionTypeComponent = ({
       <input
         type="checkbox"
         role="switch"
-        checked={value === SubscriptionTypesEnum.Year}
+        checked={value === subscriptionTypes.yr.value}
         onChange={onChange}
         className={`visually-hidden ${s.subscriptiontype__switch__input}`}
         value={value}
@@ -41,15 +40,15 @@ const SubscriptionTypeComponent = ({
     </label>
     <label
       className={`${s.subscriptiontype__button} ${
-        value === SubscriptionTypesEnum.Year
+        value === subscriptionTypes.yr.value
           ? s.subscriptiontype__button_current
           : ""
       }`}
     >
-      {subscriptionTypes[SubscriptionTypesEnum.Year].adjective}
+      {subscriptionTypes.yr.adjective}
       <input
         type="button"
-        value={SubscriptionTypesEnum.Year}
+        value={subscriptionTypes.yr.value}
         onClick={onChange}
         className="visually-hidden"
       />

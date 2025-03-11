@@ -1,10 +1,11 @@
 "use client";
 
-import { SubscriptionTypesEnum } from "@/types/subscription";
+import { SubscriptionType } from "@/types/subscription";
 import { FormActions } from "@/helpers/formReducer";
 import { useCallback, useContext } from "react";
 import { formContext } from "../FormProvider/FormProvider";
 import SubscriptionTypeComponent from "./SubscriptionTypeComponent";
+import { subscriptionTypes } from "@/constants/subscription";
 
 const SubscriptionTypeContainer = () => {
   const {
@@ -13,7 +14,7 @@ const SubscriptionTypeContainer = () => {
   } = useContext(formContext);
 
   const setType = useCallback(
-    (nextSubscriptionType: SubscriptionTypesEnum) =>
+    (nextSubscriptionType: SubscriptionType["value"]) =>
       dispatch({
         type: FormActions.SetValue,
         payload: {
@@ -33,9 +34,9 @@ const SubscriptionTypeContainer = () => {
         if (role !== "switch" && subscriptionType === value) return;
 
         const nextSubscriptionType =
-          subscriptionType === SubscriptionTypesEnum.Month
-            ? SubscriptionTypesEnum.Year
-            : SubscriptionTypesEnum.Month;
+          subscriptionType === subscriptionTypes.mo.value
+            ? subscriptionTypes.yr.value
+            : subscriptionTypes.mo.value;
 
         setType(nextSubscriptionType);
       }
