@@ -1,9 +1,9 @@
 import { type FormState } from "@/constants/formState";
 import { Action } from "@/types/action";
 import {
-  SubscriptionOptionsEnum,
-  SubscriptionAddonsEnum,
-  SubscriptionTypesEnum,
+  SubscriptionOptionsValues,
+  SubscriptionTypesValues,
+  SubscriptionAddonsValues,
 } from "@/types/subscription";
 
 export enum FormActions {
@@ -24,9 +24,9 @@ type FormPayload<ValueType> = {
 
 export type FormPayloads = {
   [FormActions.SetValue]: FormPayload<
-    SubscriptionOptionsEnum | SubscriptionTypesEnum
+  SubscriptionOptionsValues | SubscriptionTypesValues
   >;
-  [FormActions.SetMultipleValue]: FormPayload<SubscriptionAddonsEnum[]>;
+  [FormActions.SetMultipleValue]: FormPayload<SubscriptionAddonsValues[]>;
 };
 
 const formReducer = (prevState: FormState, action: Action<FormPayloads>) => {
