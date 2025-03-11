@@ -1,7 +1,7 @@
 import {
-  SubscriptionOptionsEnum,
-  SubscriptionTypesEnum,
-  SubscriptionAddonsEnum,
+  SubscriptionOption,
+  SubscriptionType,
+  SubscriptionAddon,
 } from "@/types/subscription";
 import {
   subscriptionOptionsPrices,
@@ -9,21 +9,22 @@ import {
 } from "@/constants/subscription";
 
 export const getSubscriptionOptionPrice = (
-  subscriptionOption: SubscriptionOptionsEnum,
-  subscriptionType: SubscriptionTypesEnum
+  subscriptionOption: SubscriptionOption["value"],
+  subscriptionType: SubscriptionType["value"]
 ): number =>
-  subscriptionOptionsPrices[`${subscriptionOption}_${subscriptionType}`] || 0;
+  subscriptionOptionsPrices[`${subscriptionOption} per ${subscriptionType}`] ||
+  0;
 
 export const getSubscriptionAddonPrice = (
-  subscriptionAddon: SubscriptionAddonsEnum,
-  subscriptionType: SubscriptionTypesEnum
+  subscriptionAddon: SubscriptionAddon["value"],
+  subscriptionType: SubscriptionType["value"]
 ): number =>
-  subscriptionAddonsPrices[`${subscriptionAddon}_${subscriptionType}`] || 0;
+  subscriptionAddonsPrices[`${subscriptionAddon} per ${subscriptionType}`] || 0;
 
 const getSubscriptionPrice = (
-  subscriptionOption: SubscriptionOptionsEnum,
-  subscriptionAddons: SubscriptionAddonsEnum[],
-  subscriptionType: SubscriptionTypesEnum
+  subscriptionOption: SubscriptionOption["value"],
+  subscriptionAddons: SubscriptionAddon["value"][],
+  subscriptionType: SubscriptionType["value"]
 ): number => {
   const subscriptionOptionPrice = getSubscriptionOptionPrice(
     subscriptionOption,
