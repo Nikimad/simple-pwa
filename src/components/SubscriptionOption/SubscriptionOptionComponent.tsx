@@ -1,13 +1,10 @@
-import {
-  SubscriptionOption,
-  SubscriptionOptionsEnum,
-} from "@/types/subscription";
+import { SubscriptionOption } from "@/types/subscription";
 import Image from "next/image";
 import s from "./SubscriptionOption.module.scss";
 import SubscriptionOptionPrice from "../SubscriptionOptionPrice";
 
 interface SubscriptionOptionComponentProps extends SubscriptionOption {
-  value: SubscriptionOptionsEnum;
+  value: SubscriptionOption["value"];
   isActive: boolean;
   optional: string;
   onChoose: () => void;

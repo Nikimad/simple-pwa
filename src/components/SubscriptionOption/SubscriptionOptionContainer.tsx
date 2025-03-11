@@ -1,14 +1,17 @@
 "use client";
 
-import { SubscriptionOptionsEnum } from "@/types/subscription";
+import { SubscriptionOption } from "@/types/subscription";
 import { FormActions } from "@/helpers/formReducer";
 import { useCallback, useContext } from "react";
 import { formContext } from "../FormProvider/FormProvider";
-import { subscriptionOptions, subscriptionOptionsOptionals } from "@/constants/subscription";
+import {
+  subscriptionOptions,
+  subscriptionOptionsOptionals,
+} from "@/constants/subscription";
 import SubscriptionOptionComponent from "./SubscriptionOptionComponent";
 
 interface SubscriptionOptionContainerProps {
-  option: SubscriptionOptionsEnum;
+  option: SubscriptionOption["value"];
 }
 
 const SubscriptionOptionContainer = ({
@@ -17,10 +20,11 @@ const SubscriptionOptionContainer = ({
   const { state, dispatch } = useContext(formContext);
 
   const subscriptionOption = subscriptionOptions[option];
-  const subscriptionOptionOptional = subscriptionOptionsOptionals[state.subscriptionType];
+  const subscriptionOptionOptional =
+    subscriptionOptionsOptionals[state.subscriptionType];
 
   const setPlan = useCallback(
-    (subscriptionOption: SubscriptionOptionsEnum) =>
+    (subscriptionOption: SubscriptionOption["value"]) =>
       dispatch({
         type: FormActions.SetValue,
         payload: {
