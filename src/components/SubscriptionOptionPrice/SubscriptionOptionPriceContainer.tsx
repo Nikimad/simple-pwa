@@ -1,13 +1,13 @@
 "use client";
 
-import { SubscriptionOptionsEnum } from "@/types/subscription";
+import { SubscriptionOption } from "@/types/subscription";
 import { useContext } from "react";
 import { formContext } from "../FormProvider/FormProvider";
 import { getSubscriptionOptionPrice } from "@/helpers/getSubscriptionPrice";
 import SubscriptionOptionPriceComponent from "./SubscriptionOptionPriceComponent";
 
 type SubscriptionOptionPriceContainerProps = Readonly<{
-  subscriptionOption: SubscriptionOptionsEnum;
+  subscriptionOption: SubscriptionOption["value"];
   className?: string;
 }>;
 
