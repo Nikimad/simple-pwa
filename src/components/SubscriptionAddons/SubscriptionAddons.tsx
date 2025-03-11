@@ -1,5 +1,4 @@
-import { SubscriptionAddonsEnum } from "@/types/subscription";
-import { subscriptionAddons } from "@/constants/subscription";
+import { subscriptionAddonsList } from "@/constants/subscription";
 import FormHeader from "../FormHeader";
 import SubscriptionAddon from "../SubscriptionAddon";
 import s from "./SubscriptionAddons.module.scss";
@@ -11,11 +10,9 @@ const SubscriptionAddons = () => (
       description="Add-ons help enhance your gaming experience."
     />
     <ul className={s.subscriptionaddons}>
-      {(Object.keys(subscriptionAddons) as SubscriptionAddonsEnum[]).map(
-        (addon) => (
-          <SubscriptionAddon key={addon} addon={addon} />
-        )
-      )}
+      {subscriptionAddonsList.map((addon) => (
+        <SubscriptionAddon key={addon} addon={addon} />
+      ))}
     </ul>
   </>
 );
